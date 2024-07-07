@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link rel="stylesheet" href="style.css"> 
+        <meta charset="utf-8">
+        <title>
+            初めてのToDoリスト
+        </title>
+    </head>
+
+    <body>
+        <h1>私のToDoリスト</h1>
+
+        <ul>
+            <li>HTMLの勉強</li>
+            <li>CSSの勉強</li>
+            <li>JavaScriptの勉強</li>
+        </ul>
+
+        <button id="myButton">
+            hello!
+        </button>
+        
+        <script>
+            const button1 = document.getElementById("myButton")
+
+            button1.addEventListener("click", function(){
+                alert("hoge!")
+            });
+        </script>
+    </body>
+</html>

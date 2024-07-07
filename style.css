@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #3ef;
+}
+
+ul {
+    list-style: none;
+    padding: 10;
+}
+
+li {
+    border: 2px solid #333;
+    padding: 12px;
+    margin-bottom: 8px;
+}
+
+li:hover {
+    background-color: #f0ccf0;
+    cursor: pointer;
+}
