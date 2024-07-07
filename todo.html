@@ -1,32 +1,54 @@
 <!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <link rel="stylesheet" href="style.css"> 
-        <meta charset="utf-8">
-        <title>
-            初めてのToDoリスト
-        </title>
-    </head>
+<html>
+<body>
+  <h1>私のToDoリスト</h1>
 
-    <body>
-        <h1>私のToDoリスト</h1>
+  <ul>
+    <li>hoge</li>
+  </ul>
 
-        <ul>
-            <li>HTMLの勉強</li>
-            <li>CSSの勉強</li>
-            <li>JavaScriptの勉強</li>
-        </ul>
+  <button id="addButton">追加</button>
+  <input id="todo_input" type="text">
+  <button id="delAllButton">全削除</button>
+  <button id="delHeadButton">先頭削除</button>
+  <button id="delTailButton">末尾削除</button>
 
-        <button id="myButton">
-            hello!
-        </button>
-        
-        <script>
-            const button1 = document.getElementById("myButton")
+  <ul id="todoList">
+  </ul>
+  
+  <script>
+    const todoList = document.getElementById("todoList");
+    const addButton = document.getElementById("addButton");
+    const todoInput = document.getElementById("todo_input")
+    const delAllButton = document.getElementById("delAllButton")
+    const delHeadButton = document.getElementById("delHeadButton")
+    const delTailButton = document.getElementById("delTailButton")
 
-            button1.addEventListener("click", function(){
-                alert("hoge!")
-            });
-        </script>
-    </body>
+    i = 0
+    
+    addButton.addEventListener("click", function() {
+      // 新しいリストアイテムを作成
+      const newListItem = document.createElement("li");
+      newListItem.textContent = i++;
+
+      // ToDoリストに追加
+      todoList.appendChild(newListItem);
+    });
+
+    delAllButton.addEventListener("click", function() {
+        while(todoList.firstChild){
+            todoList.removeChild(todoList.firstChild);
+        }
+    });
+
+    delHeadButton.addEventListener("click", function() {
+        todoList.removeChild(todoList.firstChild)
+    })
+
+    delTailButton.addEventListener("click", function() {
+        todoList.removeChild(todoList.lastChild)
+    })
+  </script>
+
+</body>
 </html>
